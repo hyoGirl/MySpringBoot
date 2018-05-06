@@ -5,8 +5,7 @@
     <artifactId>SprigBoot-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>SpringBoot-Shrio</artifactId>
-  
+  <artifactId>SpringBoot-thymeleaf</artifactId>
   <dependencies>
   	 <dependency>
             <groupId>org.apache.shiro</groupId>

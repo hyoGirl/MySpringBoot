@@ -45,6 +45,15 @@
 			<artifactId>fastjson</artifactId>
 			<version>1.2.15</version>
 		</dependency>
+		<dependency>
+			<groupId>javax.persistence</groupId>
+		  	<artifactId>persistence-api</artifactId>
+		  	<version>1.0</version>
+		</dependency>	
+		
+		
+		
+		
     </dependencies>
      <build>
         <pluginManagement>
@@ -69,5 +78,7 @@
      	<module>SpringBoot-Shrio</module>
      	<module>SpringBoot-AnnMultiData</module>
      	<module>SpringBoot-AopMultiDataSource</module>
+     	<module>SpringBoot-thymeleaf</module>
+     	<module>SpringBoot-ShrioJPA</module>
      </modules>
 </project>

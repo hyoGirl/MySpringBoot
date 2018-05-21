@@ -17,6 +17,12 @@ import org.apache.shiro.util.ByteSource;
 
 import javax.annotation.Resource;
 
+
+/**
+ * 说明：安全数据连接器
+ * @author 徐磊
+ * @time：2018年5月7日 上午9:08:51
+ */
 public class MyShiroRealm extends AuthorizingRealm {
     @Resource
     private UserInfoService userInfoService;

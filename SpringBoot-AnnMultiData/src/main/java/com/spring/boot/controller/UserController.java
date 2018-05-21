@@ -20,6 +20,8 @@ public class UserController {
 	@GetMapping("/list")
 	public List<User> findAll(){
 		
+		
+		
 		return userMapper.selectAll();
 	}
 }

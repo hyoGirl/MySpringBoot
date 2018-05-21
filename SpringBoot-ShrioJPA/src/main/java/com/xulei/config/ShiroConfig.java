@@ -62,6 +62,12 @@ public class ShiroConfig {
 	}
 
 
+	/**
+	 * 说明：安全管理器
+	 * @return
+	 * @author 徐磊
+	 * @time：2018年5月7日 上午9:09:17
+	 */
 	@Bean
 	public SecurityManager securityManager(){
 		DefaultWebSecurityManager securityManager =  new DefaultWebSecurityManager();
@@ -83,8 +89,7 @@ public class ShiroConfig {
 	}
 
 	@Bean(name="simpleMappingExceptionResolver")
-	public SimpleMappingExceptionResolver
-	createSimpleMappingExceptionResolver() {
+	public SimpleMappingExceptionResolver createSimpleMappingExceptionResolver() {
 		SimpleMappingExceptionResolver r = new SimpleMappingExceptionResolver();
 		Properties mappings = new Properties();
 		mappings.setProperty("DatabaseException", "databaseError");//数据库异常处理

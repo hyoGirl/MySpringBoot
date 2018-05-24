@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.mybatis.plus.entity.Plus;
 import com.mybatis.plus.service.PlusService;
+import com.mybatis.plus.utils.PageInfoTable;
 
 
 @Controller
@@ -36,22 +37,20 @@ public class PlusController {
 	@ResponseBody
 	public Plus getOne(@PathVariable("id")int id){
 		
-//		return plusService.getPlus(id);
-		return null;
-		
+		return plusService.getPlus(id);
 	}
 	/**
 	 * 测试分页
 	 */
 	@GetMapping("/page")
 	@ResponseBody
-	public List page(@RequestParam(defaultValue="1") Integer pageNumber,
+	public PageInfoTable<Plus> page(@RequestParam(defaultValue="1") Integer pageNumber,
 			@RequestParam(defaultValue="6") Integer pageSize){
-//		Page page=new Page(pageNumber,pageSize);
-//		plusService.findAllPlusPage(page);
-//		return page.getRecords();
-		
-		return null;
-		
+		Page<Plus> page=new Page<Plus>(pageNumber,pageSize);
+		Page<Plus> result = plusService.findAllPlusPage(page);
+		PageInfoTable<Plus> pageTable=new PageInfoTable<Plus>();
+		pageTable.setRows(result.getRecords());
+		pageTable.setTotal(result.getSize());
+		return pageTable;
 	}
 }

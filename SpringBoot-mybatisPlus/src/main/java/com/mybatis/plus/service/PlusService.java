@@ -1,6 +1,7 @@
 package com.mybatis.plus.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -83,6 +84,24 @@ public class PlusService extends ServiceImpl<PlusMapper,Plus>{
 		List<Plus> lstUser = plusMapper.selectPage(page, null);
 		
 		page.setRecords(lstUser);
+		
 		return page;
 	}
+	
+	/**
+	 * 说明：测试分页02
+	 * @param page
+	 * @return
+	 * @author 徐磊
+	 * @time：2018年5月21日 下午2:29:23
+	 */
+	public Page<Plus>  findAllPage(Page<Plus> page){
+		
+		
+		List<Map<String, Object>> result = plusMapper.findPlusPage(page);
+		
+		//page.setRecords((List<Plus>)result);
+		return page;
+	}
+	
 }

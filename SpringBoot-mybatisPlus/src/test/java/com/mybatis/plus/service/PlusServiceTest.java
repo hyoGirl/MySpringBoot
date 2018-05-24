@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.plugins.pagination.Pagination;
 import com.mybatis.plus.entity.Plus;
+import com.mybatis.plus.utils.PageInfoTable;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -68,15 +69,13 @@ public class PlusServiceTest {
 		
 		Page<Plus> page = plusService.findAllPlusPage(pageInfo);
 		
-		int total = page.getTotal();
+		PageInfoTable<Plus> pageTable=new PageInfoTable<Plus>();
 		
-		List<Plus> records = page.getRecords();
+		pageTable.setRows(page.getRecords());
 		
-		Map<String, Object> map = new HashMap<String, Object>();
-        map.put("total", total);
-        map.put("rows", records);
+		pageTable.setTotal(page.getSize());
         
-        System.out.println(map);
+        System.out.println(pageTable);
         
         
 	}

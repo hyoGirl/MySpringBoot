@@ -22,6 +22,7 @@ public class PropertiesController {
     @RequestMapping("/test")
     public String test(){
     	
+    	int a=100/0;
 //    	Pro p=new Pro();
 //    	
 //    	p.setTitle(title);

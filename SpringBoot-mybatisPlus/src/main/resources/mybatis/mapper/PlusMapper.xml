@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.plus.dao.PlusMapper">
+<!-- 	<resultMap id="BaseResultMap" type="com.xulei.cloud.domain.City"> -->
+<!-- 		<result column="id" property="id" /> -->
+<!-- 		<result column="province_id" property="provinceId" /> -->
+<!-- 		<result column="city_name" property="cityName" /> -->
+<!-- 		<result column="description" property="description" /> -->
+<!-- 	</resultMap> -->
+
+<!-- 	<parameterMap id="City" type="com.xulei.cloud.domain.City"/> -->
+
+	<sql id="Base_Column_List">
+		id, province_id, city_name, description
+	</sql>
+	
+	
+	<insert id="addPlus" parameterType="Plus">
+		insert into t_mybatisplus
+		(
+		Name,Age,Address,Pwd
+		)
+		values(
+		#{name},#{age},#{address},#{pwd}
+		)
+	</insert>
+	
+	
+	<select id="getPlusById" resultType="Plus">
+		select * from t_mybatisplus where id=#{id}
+	</select>
+	<!-- 	查询所有 -->
+	<select id="findAllPlus" resultType="Plus">
+		
+		select * from t_mybatisplus
+	</select>
+	
+	<!-- 	设置分页 -->
+	<select id="findAllPlusPage" resultType="Plus">
+		select * from t_mybatisplus
+	
+	</select>
+	<!-- 	设置分页02 -->
+	<select id="findPlusPage" resultType="map" parameterType="com.baomidou.mybatisplus.plugins.Page">
+		select * from t_mybatisplus
+	</select>
+
+</mapper>

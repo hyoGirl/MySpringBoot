@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/datauser?characterEncoding=utf8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+mybatis:
+  type-aliases-package: com.spring.boot.shrio.pojo
+  mapper-locations:
+  - classpath:mapper/*.xml
+logging:
+  level:
+    com.spring.boot.shrio.mapper.UserMapper=debug
+
+  

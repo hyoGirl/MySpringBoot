@@ -34,6 +34,8 @@ public class UserController {
        
     	User user2 = userService.getUser(user.getName());
     	
+    	System.out.println(user2);
+    	
     	if(user2!=null){
     		System.out.println(user2.toString());
     		return "index";

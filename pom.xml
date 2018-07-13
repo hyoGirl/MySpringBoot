@@ -86,5 +86,11 @@
      	<module>SpringBoot-ShrioJPA</module>
      	<module>SpringBoot-properties</module>
      	<module>SpringBoot-mybatisPlus</module>
+     	<module>SpringBoot-Cache</module>
+     	<module>SpringBoot-Redis_cache</module>
+     	<module>springboot-mybatis-redis</module>
+     	<module>SpringBoot-redis-data</module>
+     	<module>SpringBoot-mybatis-redis-anno</module>
+     	<module>SpringBoot-mail</module>
      </modules>
 </project>

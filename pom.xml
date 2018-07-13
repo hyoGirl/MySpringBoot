@@ -79,7 +79,7 @@
         </pluginManagement>
     </build>
      <modules>
-     	<module>SpringBoot-Shrio</module>
+
      	<module>SpringBoot-AnnMultiData</module>
      	<module>SpringBoot-AopMultiDataSource</module>
      	<module>SpringBoot-thymeleaf</module>

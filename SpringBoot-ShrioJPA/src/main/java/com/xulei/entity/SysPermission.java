@@ -17,10 +17,15 @@ public class SysPermission implements Serializable {
     private String parentIds; //父编号列表
     private Boolean available = Boolean.FALSE;
     
-    @ManyToMany
-    //name指的是映射的中间表为SysRolePermission实体。
-    @JoinTable(name="SysRolePermission",
+    @ManyToMany  //这个多对多，不是这个SysPermission和中间表，是SysPermission和role表是多对多
+    //JoinTable里面的name是中间表的名称
+    //@JoinColumn  指的是中间表和这个表之间的外键关系。
+    //这个实体类SysPermission的id所对应的外键是这个中间表SysRolePermission中的permissionId
+    //inverseJoinColumns  中的@JoinColumn 是指第二张表和中间表的外键关系，就是说中间表的roleId是role表id对应的外键
+    @JoinTable(name="SysRolePermission", 
     			//定义表中名为permissionId的外键，该外键列参照当前实体对应表的主键列
+    
+    			//
     			joinColumns={@JoinColumn(name="permissionId")},
     			//	定义连接表中名为roleId的外键列
     			inverseJoinColumns={@JoinColumn(name="roleId")})

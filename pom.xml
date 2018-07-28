@@ -92,5 +92,10 @@
      	<module>SpringBoot-redis-data</module>
      	<module>SpringBoot-mybatis-redis-anno</module>
      	<module>SpringBoot-mail</module>
+     	<module>SpringBoot-RabbitMQ</module>
+     	<module>SpringBoot-RabbitMq</module>
+     	<module>RabbitMQ-Fanout</module>
+     	<module>RabbitMQ-Topic</module>
+     	<module>RabbitMQ-Topic0</module>
      </modules>
 </project>

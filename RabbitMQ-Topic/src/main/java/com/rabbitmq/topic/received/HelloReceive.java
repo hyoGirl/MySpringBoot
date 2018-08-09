@@ -1,13 +1,10 @@
 package com.rabbitmq.topic.received;
 
 
-import com.rabbitmq.topic.CallBack.ReceiveConfirmListener;
-import org.springframework.amqp.rabbit.annotation.RabbitListeners;
-import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
-import org.springframework.amqp.rabbit.listener.SimpleMessageListenerContainer;
 import org.springframework.stereotype.Component;
+
 
 @Component
 public class HelloReceive {

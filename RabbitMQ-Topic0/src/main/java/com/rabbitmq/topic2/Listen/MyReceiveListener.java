@@ -20,6 +20,7 @@ public class MyReceiveListener implements ChannelAwareMessageListener{
     public void onMessage(Message message, Channel channel) throws Exception {
 
         try {
+        	int a=100/0;
             System.out.println(System.currentTimeMillis());
 
             System.out.println(
@@ -27,18 +28,18 @@ public class MyReceiveListener implements ChannelAwareMessageListener{
 
 
             //假设消费者处理出现了异常，看消息是否会回退
-         // int a=100/0;
+        
 
 
             //其中的false表示需要后面显示的调用basicAck，告诉MQ将msg删除
             // deliveryTag是消息传送的次数   true代表是确认所有的信息，false表示只确认当前消费者的第一个信息
-            channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
+           // channel.basicAck(message.getMessageProperties().getDeliveryTag(), false);
 
         } catch (Exception e) {
 
             System.out.println("消费失败: " + new String(message.getBody()));
             e.printStackTrace();
-            if (message.getMessageProperties().getRedelivered()) {
+            /*if (message.getMessageProperties().getRedelivered()) {
                 System.out.println("消息已重复处理失败,拒绝再次接收...");
                 // 拒绝消息
 
@@ -55,7 +56,7 @@ public class MyReceiveListener implements ChannelAwareMessageListener{
 //                requeue：被拒绝的是否重新入队列
                 channel.basicNack(message.getMessageProperties().getDeliveryTag(), false, true);
             }
-
+*/
 
 
         }

@@ -26,7 +26,7 @@ public class TestTopic2 {
 
 
 
-        helloSend.send("topic.second","DDD");
+        helloSend.send("topic.second","aaa");
 
     }
 }

@@ -1,7 +1,7 @@
 package com.rabbitmq.topic.send;
 
 import com.alibaba.fastjson.JSON;
-import com.rabbitmq.topic.CallBack.ConfirmCallBackListener;
+import com.rabbitmq.topic.CallBack.send.ConfirmCallBackListener;
 import com.rabbitmq.topic.pojo.TopicMsg;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

@@ -2,10 +2,6 @@ package com.mybatis.shiro.config;
 
 import java.util.LinkedHashMap;
 
-import com.mybatis.shiro.config.CredentialsMatcher;
-
-import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
-
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.spring.LifecycleBeanPostProcessor;
 import org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor;
@@ -16,8 +12,12 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import at.pollux.thymeleaf.shiro.dialect.ShiroDialect;
+
 @Configuration
 public class MybatisShiroConfig {
+	
+	
 
 	@Bean(name="shiroFilter")
 	public ShiroFilterFactoryBean shiroFilter(@Qualifier("securityManager") SecurityManager manager) {
@@ -27,6 +27,10 @@ public class MybatisShiroConfig {
 		// 配置登录的url和登录成功的url
 		bean.setLoginUrl("/login");
 		bean.setSuccessUrl("/home");
+		// 登录成功后要跳转的链接
+		bean.setSuccessUrl("/index");
+		//未授权界面;
+		bean.setUnauthorizedUrl("/403");
 		// 配置访问权限
 		LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<>();
 //		filterChainDefinitionMap.put("/css/*", "anon"); // 表示可以匿名访问
@@ -37,7 +41,6 @@ public class MybatisShiroConfig {
 //		filterChainDefinitionMap.put("/*", "authc");// 表示需要认证才可以访问
 //		filterChainDefinitionMap.put("/**", "authc");// 表示需要认证才可以访问
 //		filterChainDefinitionMap.put("/*.*", "authc");
-		
 		
 		filterChainDefinitionMap.put("/static/**", "anon");
 		//访问前端CSS等不需要拦截
@@ -51,25 +54,30 @@ public class MybatisShiroConfig {
 		//<!-- 过滤链定义，从上向下顺序执行，一般将/**放在最为下边 -->:
 		//<!-- authc:所有url都必须认证通过才可以访问; anon:所有url都都可以匿名访问-->
 		// 如果不设置默认会自动寻找Web工程根目录下的"/login.jsp"页面
-		bean.setLoginUrl("/login");
-		// 登录成功后要跳转的链接
-		bean.setSuccessUrl("/index");
-		//未授权界面;
-		bean.setUnauthorizedUrl("/403");
+		
 		filterChainDefinitionMap.put("/**", "authc");
 		
 		bean.setFilterChainDefinitionMap(filterChainDefinitionMap);
 		return bean;
 	}
 
+	
 	// 配置核心安全事务管理器
 	@Bean(name = "securityManager")
 	public SecurityManager securityManager(@Qualifier("authRealm") MybatisRealm authRealm) {
+		
 		System.err.println("--------------shiro已经加载----------------");
 		DefaultWebSecurityManager manager = new DefaultWebSecurityManager();
 		manager.setRealm(authRealm);
 		return manager;
 	}
+	
+	
+
+	
+	
+
+	
 
 	// 配置自定义的权限登录器
 	@Bean(name = "authRealm")
@@ -101,7 +109,12 @@ public class MybatisShiroConfig {
 	
 	@Bean
 	public static DefaultAdvisorAutoProxyCreator getDefaultAdvisorAutoProxyCreator() {
-	         return new DefaultAdvisorAutoProxyCreator();
+		
+		DefaultAdvisorAutoProxyCreator daap = new DefaultAdvisorAutoProxyCreator();
+        daap.setProxyTargetClass(true);
+		
+		
+	         return daap;
 	}
 	
 	// 管理shiro生命周期

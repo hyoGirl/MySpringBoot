@@ -11,7 +11,7 @@
 	<div class="title">
 		密码登录
 	</div>
-	错误信息：<h4 th:text="${msg}"></h4>
+	<h4 th:text="${msg}"></h4>
 	<form  th:action="@{/loginUser}" method="post">
 		<input type="text" name="username"/>
 		<input type="text" name="password"/>

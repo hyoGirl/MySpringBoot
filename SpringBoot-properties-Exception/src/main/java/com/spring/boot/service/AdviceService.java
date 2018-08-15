@@ -2,6 +2,9 @@ package com.spring.boot.service;
 
 import org.springframework.stereotype.Service;
 
+import com.spring.boot.exception.ExceptionEnum;
+import com.spring.boot.exception.MyException;
+
 @Service
 public class AdviceService {
 	
@@ -14,7 +17,16 @@ public class AdviceService {
 	 */
 	public String getData(){
 		
+		
+		
 		int a=100/0;
+		
 		return "1";
 	} 
+	
+	
+	public String testMyexception() {
+		
+		throw new MyException(ExceptionEnum.SERVER_ERROR);
+	}
 }

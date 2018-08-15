@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/bootstrap.min.css?v=3.3.6}"></link>
+<link th:href="@{/static/css/layui.css}" rel="stylesheet"/>
+</head>
+<body>
+	
+	  <p th:text="'Test ' + ${work} + '!'" />
+</body>
+</html>

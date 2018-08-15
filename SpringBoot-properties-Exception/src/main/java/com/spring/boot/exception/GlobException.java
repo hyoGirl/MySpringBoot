@@ -45,6 +45,9 @@ public class GlobException {
 		
 		System.out.println("类名是："+className);
 		System.out.println("方法名是： "+methodName);
+		
+		
+		
 		return new ErrorMsg(ExceptionEnum.REQUEST_NULL.getCode(), ExceptionEnum.REQUEST_NULL.getMessage());
 	}
 

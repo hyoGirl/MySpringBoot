@@ -31,3 +31,6 @@
 	
 	RabbitMQ：消息发送确认 与 消息接收确认（ACK）
 	https://www.jianshu.com/p/2c5eebfd0e95
+	
+	
+4: login-Token 是使用jwt生成Token来实现前后端分离的

@@ -89,7 +89,7 @@
 
      	<module>SpringBoot-thymeleaf</module>
      	<module>SpringBoot-ShrioJPA</module>
-     	<module>SpringBoot-properties</module>
+
      	<module>SpringBoot-mybatisPlus</module>
      	<module>SpringBoot-Cache</module>
      	<module>SpringBoot-Redis_cache</module>

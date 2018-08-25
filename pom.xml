@@ -113,5 +113,6 @@
      	<module>RabbitMQ-Direct</module>
      	<module>RabbitMQ-topicNolisten</module>
 
+     	<module>Properties-MapList</module>
      </modules>
 </project>

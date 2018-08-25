@@ -12,17 +12,15 @@ import org.springframework.context.annotation.Configuration;
 @ConfigurationProperties(prefix="city")
 public class DataConfig {
 
+//	private Map<String,String> map=new HashMap<>();
 	private Map<String,DataModel> map=new HashMap<>();
 
 	public Map<String, DataModel> getMap() {
 		return map;
 	}
-
 	public void setMap(Map<String, DataModel> map) {
 		this.map = map;
 	}
-	
-	
 	 private List<String> list = new ArrayList<>();
 
 	public List<String> getList() {
@@ -32,10 +30,5 @@ public class DataConfig {
 	public void setList(List<String> list) {
 		this.list = list;
 	}
-	 
-	 
-	 
-	
-	
 	
 }

@@ -7,7 +7,8 @@
   <parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.2.RELEASE</version>
+		<!-- <version>1.5.2.RELEASE</version> -->
+		<version>1.5.9.RELEASE</version>
 	</parent>
 
 	<properties>
@@ -96,6 +97,11 @@
      	<module>SpringBoot-redis-data</module>
      	<module>SpringBoot-mybatis-redis-anno</module>
      	<module>SpringBoot-mail</module>
+<<<<<<< HEAD
+     	<module>SpringBoot-Session</module>
+     	<module>SpringBoot-Redis-shiro</module>
+     	<module>DataSource-04</module>
+=======
      	<module>SpringBoot-RabbitMQ</module>
      	<module>SpringBoot-RabbitMq</module>
      	<module>RabbitMQ-Fanout</module>
@@ -106,5 +112,6 @@
      	<module>SpringBoot-tx</module>
      	<module>RabbitMQ-Direct</module>
      	<module>RabbitMQ-topicNolisten</module>
+>>>>>>> a3e72b791d7f943351a3c0e4f2a425307296776b
      </modules>
 </project>

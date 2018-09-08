@@ -34,3 +34,5 @@
 	
 	
 4: login-Token 是使用jwt生成Token来实现前后端分离的
+
+5:mybatis-batch 是在使用mybatis进行批量CRUD中一些错误的学习

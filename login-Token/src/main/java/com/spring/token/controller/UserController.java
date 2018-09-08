@@ -3,6 +3,9 @@ package com.spring.token.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -35,7 +38,9 @@ public class UserController {
 	
 	
 	@PostMapping("/api/user/login")
-	public String login(@RequestParam(value="name",required=true)String name,@RequestParam(value="pwd",required=true)String pwd) {
+	public String login(@RequestParam(value="name",required=true)String name,
+			@RequestParam(value="pwd",required=true)String pwd
+			,HttpServletResponse response) {
 		
 		Map<String,Object> responseMap=new HashMap<String,Object>();
 		User  user = (User) userService.findUser(name,pwd);
@@ -54,7 +59,11 @@ public class UserController {
 		
 		responseMap.put("msg", "操作成功");
 		responseMap.put("code", 200);
-		responseMap.put("data", JSON.toJSONString(paramMap));
+		responseMap.put("data", JSON.toJSON(paramMap));
+		
+		Cookie cookie=new Cookie("token", token);
+		cookie.setHttpOnly(true);
+		response.addCookie(cookie);
 		
 		String data = JSON.toJSONString(responseMap);
 		return data;

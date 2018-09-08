@@ -115,5 +115,7 @@
 
      	<module>Properties-MapList</module>
      	<module>login-Token</module>
+     	<module>JWT-01</module>
+     	<module>Mybatis-batch</module>
      </modules>
 </project>

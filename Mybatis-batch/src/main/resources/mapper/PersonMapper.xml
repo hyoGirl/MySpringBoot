@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.batch.dao.PersonMapper">
+
+	<sql id="Base_Column_List">
+		id, name, age, sex
+	</sql>
+	
+		<!-- 
+		不同的批量场景中，有的不需要花括号包，有的需要，还有分隔符号，有的是分号，有的是逗号
+		
+		其实就是拼装SQL
+		 -->
+	
+	
+	<select id="batchFindPerson" resultType="com.mybatis.batch.pojo.Person">
+		select
+		<include refid="Base_Column_List" />
+		from person
+		where id in
+		<foreach collection="ids" item="id" open="(" close=")"
+			separator=",">
+			#{id}
+		</foreach>
+	</select>
+	
+	
+	<delete id="batchDeletePerson" parameterType="java.util.List">
+		DELETE FROM person where id in
+		<foreach collection="ids" item="id" open="(" close=")"
+			separator=",">
+			#{id}
+		</foreach>
+	</delete>
+
+	<insert id="batchAddPerson" parameterType="com.mybatis.batch.pojo.Person">
+	
+	     insert into person (name,age,sex) 	
+	     VALUES
+		<foreach collection="persons" item="person" index="index"
+			separator=",">
+			(
+			#{person.name},#{person.age},#{person.sex}
+			)
+		</foreach>
+	</insert>
+
+	<update id="batchUpdatePerson" parameterType="com.mybatis.batch.pojo.Person">
+	
+		<foreach collection="persons" item="person" open="" close=""
+			separator=";">
+			update person
+			<set>
+				age=#{person.age}
+			</set>
+			where id=#{person.id}
+		</foreach>
+	</update>
+	
+	
+	<insert id="addPerson" parameterType="com.mybatis.batch.pojo.Person">
+			insert into person (name,age,sex) VALUES(#{name},#{age},#{sex})
+	</insert>
+
+</mapper>

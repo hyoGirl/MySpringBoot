@@ -33,7 +33,9 @@ public class JwtUtil {
 		
 		//1:指定签名的时候使用的签名算法，也就是header那部分，jjwt已经将这部分内容封装好了。
 		 SignatureAlgorithm signatureAlgorithm = SignatureAlgorithm.HS256;
+		 
 		 Date date=new Date(System.currentTimeMillis()+EXPIRE_TIME);
+		 
 		 long nowMillis = System.currentTimeMillis();//生成JWT的时间
 		 
 		 
@@ -42,9 +44,9 @@ public class JwtUtil {
 		  * //创建payload的私有声明（根据特定的业务需要添加，如果要拿这个做验证，一般是需要和jwt的接收方提前沟通好验证方式的）
 		  */
 		 Map<String,Object> claims = new HashMap<String,Object>();
-	        claims.put("uid", "DSSFAWDWADAS...");
-	        claims.put("user_name", "admin");
-	        claims.put("nick_name","DASDA121");
+	        claims.put("uid", name);
+//	        claims.put("user_name", "admin");
+//	        claims.put("nick_name","DASDA121");
 		 
 		 
 //		 Jwts.builder()
@@ -68,7 +70,8 @@ public class JwtUtil {
 		.setIssuer("XULEI")    // 签发者
 		.setAudience("xulei")  // 接受者
 		.signWith(signatureAlgorithm, generateKey())  //设置签名使用的签名算法和签名使用的秘钥
-		.setExpiration(date).compact();
+		.setExpiration(date)
+		.compact();
 		  
 		return compact;
 		

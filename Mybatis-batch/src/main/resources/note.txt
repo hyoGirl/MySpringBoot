@@ -8,9 +8,21 @@ https://blog.csdn.net/u011031422/article/details/74281479
 
 https://blog.csdn.net/saytime/article/details/79003765
 
-
+1：
 mybatis如果要实现批量更新，当只更新一个字段的时候，id保持一样的时候，比较简单
 
 但是如果id都不一样，那么需要使用foreach的同时，还需要进行配置allowMultiQueries=true
 
 在使用foreach的时候，要学会判断sql拼接的正确与否
+
+2：在使用自定义对象排序的时候。使用中文排序
+
+
+<insert id="add" parameterType="EStudent">
+  <foreach collection="list" item="item" index="index" separator=";">
+    INSERT INTO TStudent(name,age) VALUES(#{item.name}, #{item.age})
+  </foreach>
+</insert>
+
+这种批量插入只能返回最后一条的改变结果，不是全部的
+

@@ -1,15 +1,15 @@
-package com.spring.tx;
+package com.xulei.jpa;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class TxApp {
+public class JpaApp {
+
 	
 	public static void main(String[] args) {
 		
-		SpringApplication.run(TxApp.class, args);
+		SpringApplication.run(JpaApp.class, args);
 		
 	}
-
 }

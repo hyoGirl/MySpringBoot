@@ -117,5 +117,7 @@
      	<module>login-Token</module>
      	<module>JWT-01</module>
      	<module>Mybatis-batch</module>
+     	<module>Valid-data</module>
+     	<module>Jpa-01</module>
      </modules>
 </project>

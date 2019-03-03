@@ -34,9 +34,8 @@
 	</delete>
 
 	<insert id="batchAddPerson" parameterType="com.mybatis.batch.pojo.Person">
-	
-	     insert into person (name,age,sex) 	
-	     VALUES
+	   insert into person (name,age,sex) 	
+	     VALUES 
 		<foreach collection="persons" item="person" index="index"
 			separator=",">
 			(

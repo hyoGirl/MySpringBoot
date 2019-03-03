@@ -29,13 +29,13 @@ public class PersonServiceImplTest {
 		Person person = new Person();
 
 		person.setAge(12);
-		person.setName("张三");
+		person.setName("张4");
 		person.setSex(1);
 
 		Person person2 = new Person();
 
 		person2.setAge(12);
-		person2.setName("李四");
+		person2.setName("李5");
 		person2.setSex(1);
 
 		List<Person> persons = new ArrayList<Person>();

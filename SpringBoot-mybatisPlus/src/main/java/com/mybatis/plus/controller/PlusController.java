@@ -6,24 +6,26 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.mybatis.plus.entity.Plus;
 import com.mybatis.plus.service.PlusService;
+import com.mybatis.plus.service.PlusServiceImpl;
 import com.mybatis.plus.utils.PageInfoTable;
 
 
-@Controller
+@RestController
 public class PlusController {
 		
 	@Autowired
 	private PlusService plusService;
 	
 	
-	@GetMapping("/add")
-	@ResponseBody
+	@PostMapping("/add")
 	public void add(Plus plus){
 		plusService.insertPlus(plus);
 	}
@@ -34,7 +36,6 @@ public class PlusController {
 	 */
 	
 	@GetMapping("/get/{id}")
-	@ResponseBody
 	public Plus getOne(@PathVariable("id")int id){
 		
 		return plusService.getPlus(id);
@@ -43,7 +44,6 @@ public class PlusController {
 	 * 测试分页
 	 */
 	@GetMapping("/page")
-	@ResponseBody
 	public PageInfoTable<Plus> page(@RequestParam(defaultValue="1") Integer pageNumber,
 			@RequestParam(defaultValue="6") Integer pageSize){
 		Page<Plus> page=new Page<Plus>(pageNumber,pageSize);

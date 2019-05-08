@@ -119,5 +119,6 @@
      	<module>Mybatis-batch</module>
      	<module>Valid-data</module>
      	<module>Jpa-01</module>
+         <module>AOP-MDC</module>
      </modules>
 </project>

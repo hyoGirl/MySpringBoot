@@ -1,6 +1,7 @@
 package com.spring.boot.aop;
 
 import com.alibaba.fastjson.JSON;
+import com.spring.boot.util.LocalUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.context.support.WebApplicationContextUtils;
+import sun.util.locale.LocaleUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.annotation.Annotation;
@@ -43,24 +45,28 @@ public class RequestAspect {
     public Object around(ProceedingJoinPoint proceedingJoinPoint) {
 
         try {
-            MDC.put("mdc_key", UUID.randomUUID().toString());
+            LocalUtil.put("mdc_key", UUID.randomUUID().toString());
+//            MDC.put("mdc_key", UUID.randomUUID().toString());
             ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
             HttpServletRequest request = requestAttributes.getRequest();
             String requestURI = request.getRequestURI();
             long startTime = System.currentTimeMillis();
             String data = preHandler(proceedingJoinPoint, request);
 
-            logger.info("请求的URI:" + requestURI + " 请求的参数：" + data + "   请求的链路ID:" + MDC.get("mdc_key"));
+
+            logger.info("请求的URI:" + requestURI + " 请求的参数：" + data + "   请求的链路ID:" + LocalUtil.get("mdc_key"));
+//            logger.info("请求的URI:" + requestURI + " 请求的参数：" + data + "   请求的链路ID:" + MDC.get("mdc_key"));
 
             Object result = proceedingJoinPoint.proceed();
             long time = System.currentTimeMillis() - startTime;
             String respParam = postHandle(result);
-            logger.info("响应的结果为：" + respParam + "   请求耗时为：" + time);
-            return result;
+            logger.info("响应的结果为：" + respParam + "   请求耗时为：" + time+ "   请求的链路ID:" + LocalUtil.get("mdc_key"));
+            return result+"   请求的链路ID:" + LocalUtil.get("mdc_key");
         } catch (Throwable throwable) {
             throwable.printStackTrace();
         } finally {
-            MDC.clear();
+//            MDC.clear();
+            LocalUtil.clear();
         }
         return null;
 

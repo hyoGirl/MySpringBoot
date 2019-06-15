@@ -2,18 +2,18 @@
 我自己的SpringBoot学习
 
 
-1：SpringBoot-AnnMultiData
+## 1：SpringBoot-AnnMultiData
 
 主要是用来注解实现多个数据源切换，目前比较简单，就是单纯的结合通用Mapper和springboot。
 
 
-2：SpringBoot-properties
+## 2：SpringBoot-properties
 
 
 这个是用来进行不同的profile切换，当properties中存在值得时候，会覆盖掉代码里面指定的值。同时这个也是全局异常处理的Demo
 
 
-3:RabbitMq学习参考
+## 3:RabbitMq学习参考
 	1：介绍以及入门 包含了回调机制
 	https://www.cnblogs.com/hlhdidi/p/6535677.html
 	https://www.cnblogs.com/boshen-hzb/p/6841982.html
@@ -33,6 +33,9 @@
 	https://www.jianshu.com/p/2c5eebfd0e95
 	
 	
-4: login-Token 是使用jwt生成Token来实现前后端分离的
+## 4: login-Token 是使用jwt生成Token来实现前后端分离的
 
-5:mybatis-batch 是在使用mybatis进行批量CRUD中一些错误的学习
+## 5:mybatis-batch 是在使用mybatis进行批量CRUD中一些错误的学习、
+
+## 6：MDC01 以及MDC-AOP
+   都是使用学习MDC的过程，其实涉及到了装饰者模式相关的代码

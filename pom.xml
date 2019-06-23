@@ -121,5 +121,6 @@
      	<module>Jpa-01</module>
          <module>AOP-MDC</module>
          <module>MDC01</module>
+         <module>Schedule01</module>
      </modules>
 </project>

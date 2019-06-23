@@ -34,20 +34,21 @@ public class LogController {
             MDC.put(KEY, UUID.randomUUID().toString());
             logger.info(Thread.currentThread().getName()+"---获取到的编号为：--"+MDC.get(KEY));
 
-//            new Thread(()->{
-//                logger.info(Thread.currentThread().getName()+"---新获取到的编号为：----"+MDC.get(KEY));
-//            }).start();
+            new Thread(()->{
+                MDC.put(KEY, UUID.randomUUID().toString());
+                logger.info(Thread.currentThread().getName()+"---新获取到的编号为：----"+MDC.get(KEY));
+            }).start();
 
             /**
              * 使用装设者模式来解决
              */
 
-            new Thread(new DecoratorMDC(new Runnable() {
-                @Override
-                public void run() {
-                    logger.info(Thread.currentThread().getName()+"---新获取到的编号为：----"+MDC.get(KEY));
-                }
-            })).start();
+//            new Thread(new DecoratorMDC(new Runnable() {
+//                @Override
+//                public void run() {
+//                    logger.info(Thread.currentThread().getName()+"---新获取到的编号为：----"+MDC.get(KEY));
+//                }
+//            })).start();
 
 
         } catch (IllegalArgumentException e) {

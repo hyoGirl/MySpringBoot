@@ -91,12 +91,8 @@
      	<module>SpringBoot-ShrioJPA</module>
 
      	<module>SpringBoot-mybatisPlus</module>
-     	<module>SpringBoot-Cache</module>
      	<module>SpringBoot-Redis_cache</module>
-     	<module>springboot-mybatis-redis</module>
-     	<module>SpringBoot-redis-data</module>
      	<module>SpringBoot-mybatis-redis-anno</module>
-     	<module>SpringBoot-mail</module>
 
      	<module>SpringBoot-Session</module>
      	<module>SpringBoot-Redis-shiro</module>
@@ -107,15 +103,12 @@
      	<module>RabbitMQ-Fanout</module>
      	<module>RabbitMQ-Topic</module>
      	<module>RabbitMQ-Topic0</module>
-     	<module>SpringBoot-Bootstrap</module>
      	<module>SpringBoot-springSession</module>
-     	<module>SpringBoot-tx</module>
      	<module>RabbitMQ-Direct</module>
      	<module>RabbitMQ-topicNolisten</module>
 
      	<module>Properties-MapList</module>
      	<module>login-Token</module>
-     	<module>JWT-01</module>
      	<module>Mybatis-batch</module>
      	<module>Valid-data</module>
      	<module>Jpa-01</module>

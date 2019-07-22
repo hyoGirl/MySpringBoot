@@ -115,5 +115,6 @@
          <module>AOP-MDC</module>
          <module>MDC01</module>
          <module>Schedule01</module>
+		 <module>SpringSession2</module>
      </modules>
 </project>

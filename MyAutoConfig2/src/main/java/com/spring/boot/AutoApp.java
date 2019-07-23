@@ -1,6 +1,7 @@
 package com.spring.boot;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,11 +20,15 @@ public class AutoApp {
 
 
 
+    @Value("${some.key:true}")
+    private  boolean  flag;
+
     @Autowired
     private Hello hello;
 
     @RequestMapping("/")
     public String index() {
+        System.out.println("------------>"+flag);
         return hello.sayHello();
     }
 

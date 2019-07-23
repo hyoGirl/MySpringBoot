@@ -121,7 +121,8 @@
          <module>AOP-MDC</module>
          <module>MDC01</module>
          <module>Schedule01</module>
-         <module>MyAutoConfig</module>
          <module>MyAutoConfig2</module>
+		 <module>SpringSession2</module>
+>>>>>>> 9270af11b79f8c169a4ef2663a029cf30953d62c
      </modules>
 </project>

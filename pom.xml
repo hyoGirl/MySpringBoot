@@ -125,5 +125,6 @@
          <module>MyAutoConfig</module>
 		 <module>SpringSession2</module>
 		 <module>RedisPublish</module>
+         <module>MyLock</module>
      </modules>
 </project>

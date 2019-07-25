@@ -1,0 +1,3 @@
+参考文章
+SSM(十五) 乐观锁与悲观锁的实际应用
+1: https://www.jianshu.com/p/315b7de976b8

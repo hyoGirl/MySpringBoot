@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-public class PlusConfig {
+public class MybatisPlusConfig {
 	
 	@Bean
     public PaginationInterceptor paginationInterceptor(){

@@ -1,0 +1,19 @@
+#mvn install:install-file -DgroupId=com.alipay -DartifactId=trade-sdk -Dversion=1.0.0 -Dpackaging=jar -Dfile=alipay-trade-sdk-1.0.0.jar
+#
+#
+#
+#-DgroupId：表示jar对应的groupId
+#
+#<groupId>com.alipay</groupId>
+#-DartifactId: 表示jar对应的artifactId
+#
+#<artifactId>trade-sdk</artifactId>
+#-Dversion: 表示jar对应的 version
+#
+#<version>1.0.0</version>
+
+参考文章：
+
+https://blog.csdn.net/u010399009/article/details/79382831
+
+https://blog.csdn.net/zxc123e/article/details/80222967

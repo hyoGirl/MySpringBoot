@@ -126,5 +126,6 @@
 		 <module>SpringSession2</module>
 		 <module>RedisPublish</module>
          <module>MyLock</module>
+         <module>RabbitMQ</module>
      </modules>
 </project>

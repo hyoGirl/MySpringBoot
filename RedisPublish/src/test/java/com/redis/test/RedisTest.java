@@ -26,16 +26,9 @@ public class RedisTest {
 
     @Test
     public void testSend(){
-
         Message msg=new Message();
-
         msg.setMsg("test001");
-
         msg.setName("redis");
-
-
         publisher.pushMessage("user", msg);
-
-
     }
 }

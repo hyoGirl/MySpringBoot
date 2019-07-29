@@ -39,3 +39,5 @@
 
 ## 6：MDC01 以及MDC-AOP
    都是使用学习MDC的过程，其实涉及到了装饰者模式相关的代码
+## 7：myLock
+   是参考网上代码自己写的乐观锁例子  https://www.jianshu.com/p/315b7de976b8

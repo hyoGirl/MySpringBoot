@@ -17,7 +17,6 @@ public class Publisher {
     @Autowired
     RedisTemplate redisTemplate;
 
-
     public void pushMessage(String topic, Message message) {
         redisTemplate.convertAndSend(topic,message);
 

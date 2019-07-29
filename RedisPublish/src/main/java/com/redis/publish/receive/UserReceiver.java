@@ -21,7 +21,6 @@ public class UserReceiver extends AbstractReceiver{
 
         System.out.println("=====================================");
 
-
         System.out.println("接收到商品消息："+JSON.toJSONString(message));
 //        logger.info("接收到商品消息：{}", JSON.toJSONString(message));
 

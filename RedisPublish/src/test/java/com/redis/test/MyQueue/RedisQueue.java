@@ -68,9 +68,7 @@ public class RedisQueue {
             String next = delaySet.iterator().next();
             Long delay = jedis.zrem("delay", next);
             if (delay > 0) {
-                Message message = JSONObject.parseObject(next, Messa
-
-                        ge.class);
+                Message message = JSONObject.parseObject(next, Message.class);
                 System.out.println("延迟处理的的时间为： " + LocalTime.now()+"-->"+System.currentTimeMillis());
                 System.out.println(message);
             }
@@ -92,3 +90,6 @@ public class RedisQueue {
         jedis.zadd("delay", score, JSON.toJSONString(message));
     }
 }
+
+
+//https://blog.csdn.net/qpatience/article/details/90718133

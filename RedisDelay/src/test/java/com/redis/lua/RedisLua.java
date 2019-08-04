@@ -26,13 +26,6 @@ public class RedisLua {
 //                        "if type(t1) == 'table' then" + "\n" +
 //                        "return t1;" + "\n" +
 //                        "end;" + "\n" ;
-        long score1=System.currentTimeMillis()+2*1000;
-        jedis.zadd("delay002",score1,"test001");
-        long score2=System.currentTimeMillis()+3*1000;
-        jedis.zadd("delay002",score2,"test002");
-
-
-
 
         List<String> keys=new ArrayList<>();
         keys.add("delay002");

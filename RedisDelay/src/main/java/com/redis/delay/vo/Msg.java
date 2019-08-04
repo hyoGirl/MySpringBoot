@@ -1,4 +1,4 @@
-package com.redis.delay;
+package com.redis.delay.vo;
 
 import lombok.Data;
 

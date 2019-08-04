@@ -1,7 +1,7 @@
 package com.redis.delay.controller;
 
 import com.alibaba.fastjson.JSON;
-import com.redis.delay.Msg;
+import com.redis.delay.vo.Msg;
 import com.redis.delay.common.DelayConsumer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -36,7 +36,7 @@ public class DelayController {
             delay(i);
         }
 //        delay(1);
-        delayConsumer.conumer("delay001");
+        delayConsumer.conumer("delay002");
         return "添加到延迟队列中了";
 
     }
@@ -58,7 +58,7 @@ public class DelayController {
 
         String data = JSON.toJSONString(msg);
 
-        redisTemplate.opsForZSet().add("delay001",data,score);
+        redisTemplate.opsForZSet().add("delay002",data,score);
 
     }
 

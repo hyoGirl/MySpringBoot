@@ -127,5 +127,6 @@
 		 <module>RedisPublish</module>
          <module>MyLock</module>
          <module>RabbitMQ</module>
+         <module>RedisDelay</module>
      </modules>
 </project>

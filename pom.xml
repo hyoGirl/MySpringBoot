@@ -128,5 +128,6 @@
          <module>MyLock</module>
          <module>RabbitMQ</module>
          <module>RedisDelay</module>
+         <module>Observer</module>
      </modules>
 </project>

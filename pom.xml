@@ -9,6 +9,7 @@
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<!-- <version>1.5.2.RELEASE</version> -->
 		<version>1.5.9.RELEASE</version>
+		<!--<version>2.1.5.RELEASE</version>-->
 	</parent>
 
 	<properties>
@@ -109,7 +110,6 @@
      	<module>RabbitMQ-Fanout</module>
      	<module>RabbitMQ-Topic</module>
      	<module>RabbitMQ-Topic0</module>
-     	<module>SpringBoot-springSession</module>
      	<module>RabbitMQ-Direct</module>
      	<module>RabbitMQ-topicNolisten</module>
 
@@ -123,11 +123,14 @@
          <module>Schedule01</module>
          <module>MyAutoConfig2</module>
          <module>MyAutoConfig</module>
-		 <module>SpringSession2</module>
 		 <module>RedisPublish</module>
          <module>MyLock</module>
-         <module>RabbitMQ</module>
          <module>RedisDelay</module>
          <module>Observer</module>
+         <module>RedisLock</module>
+         <module>RedisSingle</module>
+         <module>RabbitMQ-Email</module>
+         <module>Nginx-10086</module>
+         <module>Nginx-10085</module>
      </modules>
 </project>

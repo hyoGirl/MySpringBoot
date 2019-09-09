@@ -281,7 +281,7 @@
 		 * It is possible to pass in a standard jQuery-like AJAX config and jstree will automatically determine if the response is JSON or HTML and use that to populate the tree.
 		 * In addition to the standard jQuery ajax options here you can suppy functions for `data` and `url`, the functions will be run in the current instance's scope and a param will be passed indicating which node is being loaded, the return value of those functions will be used.
 		 *
-		 * The last option is to specify a function, that function will receive the node being loaded as argument and a second param which is a function which should be called with the result.
+		 * The last option is to specify a function, that function will consumer the node being loaded as argument and a second param which is a function which should be called with the result.
 		 *
 		 * __Examples__
 		 *
@@ -6692,7 +6692,7 @@
 	 * It is possible to set this to a standard jQuery-like AJAX config.
 	 * In addition to the standard jQuery ajax options here you can supply functions for `data` and `url`, the functions will be run in the current instance's scope and a param will be passed indicating which node IDs need to be loaded, the return value of those functions will be used.
 	 *
-	 * You can also set this to a function, that function will receive the node IDs being loaded as argument and a second param which is a function (callback) which should be called with the result.
+	 * You can also set this to a function, that function will consumer the node IDs being loaded as argument and a second param which is a function (callback) which should be called with the result.
 	 *
 	 * Both the AJAX and the function approach rely on the same return value - an object where the keys are the node IDs, and the value is the children of that node as an array.
 	 *
@@ -6780,7 +6780,7 @@
 		 * a jQuery-like AJAX config, which jstree uses if a server should be queried for results.
 		 *
 		 * A `str` (which is the search string) parameter will be added with the request, an optional `inside` parameter will be added if the search is limited to a node id. The expected result is a JSON array with nodes that need to be opened so that matching nodes will be revealed.
-		 * Leave this setting as `false` to not query the server. You can also set this to a function, which will be invoked in the instance's scope and receive 3 parameters - the search string, the callback to call with the array of nodes to load, and the optional node ID to limit the search to
+		 * Leave this setting as `false` to not query the server. You can also set this to a function, which will be invoked in the instance's scope and consumer 3 parameters - the search string, the callback to call with the array of nodes to load, and the optional node ID to limit the search to
 		 * @name $.jstree.defaults.search.ajax
 		 * @plugin search
 		 */

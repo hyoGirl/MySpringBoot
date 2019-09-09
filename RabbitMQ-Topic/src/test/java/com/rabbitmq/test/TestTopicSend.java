@@ -32,7 +32,7 @@ public class TestTopicSend {
                 helloSender.send("topic.msg",((int)Math.random()*(10-1)+1)+" ");
             }
 
-//        helloSender.send("topic.message","dddd");
+//        helloSender.producer("topic.message","dddd");
 
     }
 

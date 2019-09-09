@@ -53,7 +53,7 @@
 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
-			<version>1.2.15</version>
+			<version>1.2.59</version>
 		</dependency>
 		<dependency>
 			<groupId>javax.persistence</groupId>
@@ -67,9 +67,7 @@
           <artifactId>lombok</artifactId>
           <version>1.16.22</version>
       </dependency>
-		
-		
-		
+
     </dependencies>
      <build>
         <pluginManagement>
@@ -132,5 +130,6 @@
          <module>RabbitMQ-Email</module>
          <module>Nginx-10086</module>
          <module>Nginx-10085</module>
+         <module>Redis-Limit</module>
      </modules>
 </project>

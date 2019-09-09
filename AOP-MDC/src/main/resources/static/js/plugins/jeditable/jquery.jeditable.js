@@ -21,13 +21,13 @@
  *
  * @name  Jeditable
  * @type  jQuery
- * @param String  target             (POST) URL or function to send edited content to **
+ * @param String  target             (POST) URL or function to producer edited content to **
  * @param Hash    options            additional options
- * @param String  options[method]    method to use to send edited content (POST or PUT) **
+ * @param String  options[method]    method to use to producer edited content (POST or PUT) **
  * @param Function options[callback] Function to run after submitting edited content **
  * @param String  options[name]      POST parameter name of edited content
  * @param String  options[id]        POST parameter name of edited div id
- * @param Hash    options[submitdata] Extra parameters to send when submitting edited content.
+ * @param Hash    options[submitdata] Extra parameters to producer when submitting edited content.
  * @param String  options[type]      text, textarea or select (or any 3rd party input type) **
  * @param Integer options[rows]      number of rows if using textarea **
  * @param Integer options[cols]      number of columns if using textarea **

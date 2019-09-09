@@ -21,7 +21,7 @@ public class TestTopic2 {
 
 /*
         for(int i=0;i<10;i++){
-            helloSend.send("topic.second", (int)(Math.random()*9+1)+" ");
+            helloSend.producer("topic.second", (int)(Math.random()*9+1)+" ");
         }*/
 
 

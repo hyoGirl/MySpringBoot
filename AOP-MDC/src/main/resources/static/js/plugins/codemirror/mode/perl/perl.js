@@ -342,7 +342,7 @@ CodeMirror.defineMode("perl",function(){
                 ioctl                           :1,     // - system-dependent device control system call
                 'join'                          :1,     // - join a list into a string using a separator
                 keys                            :1,     // - retrieve list of indices from a hash
-                kill                            :1,     // - send a signal to a process or process group
+                kill                            :1,     // - producer a signal to a process or process group
                 last                            :1,     // - exit a block prematurely
                 lc                              :1,     // - return lower-case version of a string
                 lcfirst                         :1,     // - return a string with just the next letter in lower case
@@ -359,8 +359,8 @@ CodeMirror.defineMode("perl",function(){
                 mkdir                           :1,     // - create a directory
                 msgctl                          :1,     // - SysV IPC message control operations
                 msgget                          :1,     // - get SysV IPC message queue
-                msgrcv                          :1,     // - receive a SysV IPC message from a message queue
-                msgsnd                          :1,     // - send a SysV IPC message to a message queue
+                msgrcv                          :1,     // - consumer a SysV IPC message from a message queue
+                msgsnd                          :1,     // - producer a SysV IPC message to a message queue
                 my                              : 2,    // - declare and assign a local variable (lexical scoping)
                 'new'                           :1,     //
                 next                            :1,     // - iterate a block prematurely
@@ -391,7 +391,7 @@ CodeMirror.defineMode("perl",function(){
                 readline                        :1,     // - fetch a record from a file
                 readlink                        :1,     // - determine where a symbolic link is pointing
                 readpipe                        :1,     // - execute a system command and collect standard output
-                recv                            :1,     // - receive a message over a Socket
+                recv                            :1,     // - consumer a message over a Socket
                 redo                            :1,     // - start this loop iteration over again
                 ref                             :1,     // - find out the type of thing being referenced
                 rename                          :1,     // - change a filename
@@ -411,7 +411,7 @@ CodeMirror.defineMode("perl",function(){
                 semctl                          :1,     // - SysV semaphore control operations
                 semget                          :1,     // - get set of SysV semaphores
                 semop                           :1,     // - SysV semaphore operations
-                send                            :1,     // - send a message over a socket
+                send                            :1,     // - producer a message over a socket
                 setgrent                        :1,     // - prepare group file for use
                 sethostent                      :1,     // - prepare hosts file for use
                 setnetent                       :1,     // - prepare networks file for use

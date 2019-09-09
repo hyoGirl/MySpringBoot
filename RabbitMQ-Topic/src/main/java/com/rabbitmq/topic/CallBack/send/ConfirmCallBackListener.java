@@ -22,7 +22,6 @@ public class ConfirmCallBackListener implements RabbitTemplate.ConfirmCallback {
 
         rabbitTemplate.setConfirmCallback(this);
         CorrelationData correlationId=new CorrelationData(UUID.randomUUID().toString());
-
         rabbitTemplate.convertAndSend(exchangeName,routingKey,msg,correlationId);
     }
 

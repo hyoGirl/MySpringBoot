@@ -3421,7 +3421,7 @@
                     promise;
 
                 if ( file ) {
-                    promise = me.request( 'before-send-file', file, function() {
+                    promise = me.request( 'before-producer-file', file, function() {
 
                         // 有可能文件被skip掉了。文件被skip掉后，状态坑定不是Queued.
                         if ( file.getStatus() === Status.PROGRESS ||
@@ -3444,7 +3444,7 @@
                         ~idx && pending.splice( idx, 1, file );
                     });
 
-                    // befeore-send-file的钩子就有错误发生。
+                    // befeore-producer-file的钩子就有错误发生。
                     promise.fail(function( reason ) {
                         file.setStatus( Status.ERROR, reason );
                         me.owner.trigger( 'uploadError', file, reason );
@@ -3470,7 +3470,7 @@
                     file = block.file,
                     promise;
 
-                // 有可能在 before-send-file 的 promise 期间改变了文件状态。
+                // 有可能在 before-producer-file 的 promise 期间改变了文件状态。
                 // 如：暂停，取消
                 // 我们不能中断 promise, 但是可以在 promise 完后，不做上传操作。
                 if ( file.getStatus() !== Status.PROGRESS ) {
@@ -3492,7 +3492,7 @@
                         file.source.slice( block.start, block.end );
 
                 // hook, 每个分片发送之前可能要做些异步的事情。
-                promise = me.request( 'before-send', block, function() {
+                promise = me.request( 'before-producer', block, function() {
 
                     // 有可能文件已经上传出错了，所以不需要再传输了。
                     if ( file.getStatus() === Status.PROGRESS ) {
@@ -3686,7 +3686,7 @@
                 var owner = this.owner;
 
                 return owner
-                        .request( 'after-send-file', arguments, function() {
+                        .request( 'after-producer-file', arguments, function() {
                             file.setStatus( Status.COMPLETE );
                             owner.trigger( 'uploadSuccess', file, ret, hds );
                         })

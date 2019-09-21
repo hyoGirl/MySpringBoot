@@ -1,9 +1,10 @@
-package com.xulei.rabbitmq.code.service;
+package com.xulei.rabbitmq.code.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xulei.rabbitmq.code.dao.MsgLogDao;
 import com.xulei.rabbitmq.code.entity.MsgLog;
+import com.xulei.rabbitmq.code.service.MsgLogService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -131,5 +131,6 @@
          <module>Nginx-10086</module>
          <module>Nginx-10085</module>
          <module>Redis-Limit</module>
+         <module>RabbitMQ-Email-Proxy</module>
      </modules>
 </project>

@@ -2,10 +2,11 @@ package com.xulei.rabbitmq.mq.producer;
 
 import com.alibaba.fastjson.JSON;
 import com.xulei.rabbitmq.code.dao.MsgLogDao;
+import com.xulei.rabbitmq.code.entity.LoginLog;
 import com.xulei.rabbitmq.code.entity.Mail;
 import com.xulei.rabbitmq.code.entity.MsgLog;
+import com.xulei.rabbitmq.config.LoginMQConfig;
 import com.xulei.rabbitmq.config.MailMQConfig;
-import com.xulei.rabbitmq.config.MqConfig;
 import com.xulei.rabbitmq.util.RandomUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.core.Message;
@@ -24,7 +25,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Slf4j
-public class SimpleMailSend {
+public class LoginSend {
 
 
     @Autowired
@@ -33,37 +34,20 @@ public class SimpleMailSend {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    public void send(Mail mail) {
+    public void send(LoginLog loginLog) {
         String msgId = RandomUtil.UUID32();
-
-        mail.setMsgId(msgId);
-
-        MsgLog msgLog = new MsgLog(msgId, mail, MailMQConfig.MAIL_EXCHANGE_NAME, MailMQConfig.MAIL_ROUTING_KEY_NAME);
-
-        /**
-         * 发送过程时，就自动入库到消息库中
-         */
+        loginLog.setMsgId(msgId);
+        MsgLog msgLog = new MsgLog(msgId, loginLog, LoginMQConfig.LOGIN_LOG_EXCHANGE_NAME, LoginMQConfig.LOGIN_LOG_ROUTING_KEY_NAME);
         msgLogDao.insert(msgLog);// 消息入库
 
         CorrelationData correlationData = new CorrelationData(msgId);
-        Message message = MessageBuilder.withBody(JSON.toJSONString(mail).getBytes()).build();
+        Message message = MessageBuilder.withBody(JSON.toJSONString(loginLog).getBytes()).build();
 
-        rabbitTemplate.convertAndSend(MailMQConfig.MAIL_EXCHANGE_NAME,
-                MailMQConfig.MAIL_ROUTING_KEY_NAME,
+        rabbitTemplate.convertAndSend(LoginMQConfig.LOGIN_LOG_EXCHANGE_NAME,
+                LoginMQConfig.LOGIN_LOG_ROUTING_KEY_NAME,
                 message,
                 correlationData);// 发送消息
 
-        // 使用错误的交换器名字。来验证是不是不会发送到队列中
-//        rabbitTemplate.convertAndSend("errorName",
-//                MailMQConfig.MAIL_ROUTING_KEY_NAME,
-//                message,
-//                correlationData);// 发送消息
-
-        // 使用错误的路由名字。来验证交换器发送到
-//        rabbitTemplate.convertAndSend(MailMQConfig.MAIL_EXCHANGE_NAME,
-//                "errorName",
-//                message,
-//                correlationData);// 发送消息
     }
 
 }

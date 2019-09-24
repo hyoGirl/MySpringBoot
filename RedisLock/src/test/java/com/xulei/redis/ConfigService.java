@@ -36,11 +36,11 @@ public class ConfigService {
     private RedisLock01 redisLock01=new RedisLock01(pool);
 
     public   void kill() {
-        String id = redisLock01.addLock("resource", 5000, 1000);
+        String id = redisLock01.addLock("lock01", 5000, 1000);
         if(!StringUtils.isEmpty(id)){
             if(num<=0){
                 System.out.println(LocalTime.now()+"库存已经完了");
-                redisLock01.releaseLock("resource",id);
+                redisLock01.releaseLock("lock01",id);
                 System.out.println(LocalTime.now()+" "+Thread.currentThread().getName() + "--> 释放了锁");
                 return;
             }else{
@@ -52,7 +52,8 @@ public class ConfigService {
                  *
                  */
                 System.out.println(LocalTime.now()+" "+Thread.currentThread().getName() + "获得了锁 .锁ID： "+ id +"--> 当前仓库持有量为："+ (--num));
-                redisLock01.releaseLock("resource",id);
+                redisLock01.releaseLock("lock01",id);
+                System.out.println(LocalTime.now()+" "+Thread.currentThread().getName() + "释放了锁 .锁ID： "+ id +"--> 当前仓库持有量为："+ num);
             }
         }
     }

@@ -55,9 +55,7 @@ public class DelayController {
         msg.setMsg("这是延迟队列里面的第【"+ i+" 】条消息");
 
         long score=System.currentTimeMillis()+(i+1)*1000;
-
         String data = JSON.toJSONString(msg);
-
         redisTemplate.opsForZSet().add("delay002",data,score);
 
     }

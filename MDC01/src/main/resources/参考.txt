@@ -1,0 +1,8 @@
+spring的Beanpostprocessor
+
+
+https://www.cnblogs.com/jyyzzjl/p/5417418.html
+
+
+
+Constructor > @PostConstruct > InitializingBean > init-method

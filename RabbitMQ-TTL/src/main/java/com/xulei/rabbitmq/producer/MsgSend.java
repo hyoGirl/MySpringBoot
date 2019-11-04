@@ -33,7 +33,6 @@ public class MsgSend {
      * @param delayTimes   延迟时间
      */
     public void send(Object messageContent, String exchange, String routerKey, final long delayTimes){
-
         /**
          * Convert a Java object to an Amqp {@link Message} and send it to a specific exchange with a specific routing key.
          *
@@ -46,6 +45,9 @@ public class MsgSend {
         if(!StringUtils.isEmpty(exchange)){
             logger.info("延迟：{}毫秒写入消息队列：{}，消息内容：{}", delayTimes, routerKey, JSON.toJSONString(messageContent));
             rabbitMqTemplate.convertAndSend(exchange,routerKey,messageContent,message -> {
+                /**
+                 * 这里是单独的设置了某一条消息的过期时间，而不是整个队列都设置了。
+                 */
                 message.getMessageProperties().setExpiration(String.valueOf(delayTimes));
                 return message;
             });

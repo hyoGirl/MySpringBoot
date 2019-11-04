@@ -17,16 +17,16 @@ public enum  QueueEnum {
 
 
     // 交换器
-    private String exchange;
+    private String exchangeName;
     // 队列名字
-    private String name;
+    private String queueName;
     // 路由key
     private String routeKey;
 
 
     QueueEnum(String exchange, String name, String routeKey) {
-        this.exchange = exchange;
-        this.name = name;
+        this.exchangeName = exchange;
+        this.queueName = name;
         this.routeKey = routeKey;
     }
 

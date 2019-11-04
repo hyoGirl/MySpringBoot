@@ -31,21 +31,12 @@ public class DecoratorMDC implements Runnable {
 
     @Override
     public void run() {
-
         for(Map.Entry<String,String> entry:map.entrySet()){
             MDC.put(entry.getKey(),entry.getValue());
         }
-
-
         runnable.run();
-
         for(Map.Entry<String,String> entry:map.entrySet()){
             MDC.remove(entry.getKey());
         }
-
-
-
-
-
     }
 }

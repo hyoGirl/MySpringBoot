@@ -21,14 +21,18 @@ import java.util.Date;
 @RunWith(SpringJUnit4ClassRunner.class)
 public class RabbitmqTest {
 
-
     @Autowired
     MsgSend msgSend;
 
     @Test
     public void sendTest(){
-        msgSend.send("测试延迟消费,写入时间：" + new Date(),
-                QueueEnum.MSG_TTL_QUEUE.getExchange(),
+
+        msgSend.send("测试延迟消费15秒,写入时间：" + new Date(),
+                QueueEnum.MSG_TTL_QUEUE.getExchangeName(),
+                QueueEnum.MSG_TTL_QUEUE.getRouteKey(),
+                15*1000);
+        msgSend.send("测试延迟消费10秒,写入时间：" + new Date(),
+                QueueEnum.MSG_TTL_QUEUE.getExchangeName(),
                 QueueEnum.MSG_TTL_QUEUE.getRouteKey(),
                 10*1000);
 

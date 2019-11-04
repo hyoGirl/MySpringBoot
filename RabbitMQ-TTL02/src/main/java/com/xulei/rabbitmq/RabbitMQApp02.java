@@ -1,25 +1,21 @@
-package com.mdc.learn;
+package com.xulei.rabbitmq;
 
-import com.mdc.learn.spring.DemoServiceImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author ashura1110
- * @ClassName MDCApp
+ * @ClassName XULEI
  * @description TODO
- * @Date 2019/6/15 17:37
+ * @Date 2019/10/14 21:39
  * @Version 1.0
  */
 @SpringBootApplication
-public class MDCApp {
+public class RabbitMQApp02 {
 
 
     public static void main(String[] args) {
-
-
-        SpringApplication.run(MDCApp.class,args);
-
+        SpringApplication.run(RabbitMQApp02.class,args);
 
 
     }

@@ -4,12 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.baomidou.mybatisplus.plugins.Page;
 import com.mybatis.plus.entity.Plus;
@@ -26,10 +21,16 @@ public class PlusController {
 	
 	
 	@PostMapping("/add")
-	public void add(Plus plus){
+	public void add(@RequestBody  Plus plus){
+
 		plusService.insertPlus(plus);
 	}
-	
+
+	@PostMapping("/del")
+	public void del(@RequestParam ("id") int id){
+		plusService.deletePlus(id);
+	}
+
 	
 	/**
 	 * 测试获取一个

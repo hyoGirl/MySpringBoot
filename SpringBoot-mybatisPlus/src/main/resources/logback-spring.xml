@@ -15,7 +15,15 @@
         </encoder>
     </appender>
 
+    <!-- 控制com.example.service下类的打印，使用console打印warn级别日志 -->
+    <!-- 设置addtivity是因为这里已经指定了appender，如果再向上传递就会被root下的appender再次打印 -->
+    <!--<logger name="com.mybatis.plus" level="WARN" addtivity="false">-->
+        <!--<appender-ref ref="console">-->
+    <!--</logger>-->
+     
+    
     <root level="info">
         <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
     </root>
 </configuration>

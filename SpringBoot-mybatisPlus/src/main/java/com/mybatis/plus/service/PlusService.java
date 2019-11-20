@@ -12,4 +12,5 @@ public interface PlusService extends IService<Plus>{
 
 	Page<Plus> findAllPlusPage(Page<Plus> page);
 
+	void deletePlus(int id);
 }

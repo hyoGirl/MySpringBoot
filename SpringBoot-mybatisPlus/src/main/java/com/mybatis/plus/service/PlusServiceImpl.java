@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
+import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
@@ -21,11 +22,28 @@ public class PlusServiceImpl extends ServiceImpl<PlusMapper,Plus> implements Plu
 	private PlusMapper plusMapper;
 
 	@Override
-	@Transactional(propagation=Propagation.REQUIRED)
+//	@Transactional(propagation=Propagation.REQUIRED)
 	public void insertPlus(Plus plus) {
 		plusMapper.insert(plus);
+//		int a=100/0;
+		System.out.println("本次测试没有事务");
+		deletePlus(50);
+//		PlusService plusService = (PlusService) AopContext.currentProxy();
+//		plusService.deletePlus(49);
+	}
+
+	@Override
+//	@Transactional(propagation=Propagation.REQUIRES_NEW)
+	@Transactional
+	public void deletePlus(int id) {
+		System.out.println("本次测试有事务");
+		plusMapper.deleteById(id);
 		int a=100/0;
 	}
+
+
+
+
 
 	@Override
 	public Plus getPlus(int id) {

@@ -14,6 +14,7 @@ import com.baomidou.mybatisplus.plugins.Page;
 import com.baomidou.mybatisplus.plugins.pagination.Pagination;
 import com.mybatis.plus.entity.Plus;
 import com.mybatis.plus.utils.PageInfoTable;
+import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -23,13 +24,14 @@ public class PlusServiceImplTest {
 	private PlusService plusService;
 
 	@Test
+	@Transactional
 	public void testInsertPlus() {
 		Plus plus=new Plus();
 		
-		plus.setName("name01");
-		plus.setAge(13);
-		plus.setPwd("pwd01");
-		plus.setAddress("人民大道3号");
+		plus.setName("name07");
+		plus.setAge(17);
+		plus.setPwd("pwd07");
+		plus.setAddress("人民大道7号");
 		plusService.insertPlus(plus);
 		
 	}

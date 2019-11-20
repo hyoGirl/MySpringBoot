@@ -21,7 +21,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @Slf4j
-public class MailListen {
+public class   MailListen {
 
     @Autowired
     private SimpleMailConsumer simpleMailConsumer;

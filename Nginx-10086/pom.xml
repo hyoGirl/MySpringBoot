@@ -11,5 +11,22 @@
 
     <artifactId>Nginx-100086</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
 
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.22</version>
+        </dependency>
+    </dependencies>
+    <!--版权声明：本文为CSDN博主「桌前明月」的原创文章，遵循 CC 4.0 BY 版权协议，转载请附上原文出处链接及本声明。-->
+    <!--原文链接：https://blog.csdn.net/ljk126wy/article/details/93971421-->
 </project>

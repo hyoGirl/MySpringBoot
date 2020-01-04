@@ -2,12 +2,13 @@
 package com.spring.boot.dataSource;
 
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.apache.ibatis.type.TypeHandler;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -24,7 +25,9 @@ public class BookDataSourceConfigurer
     @ConfigurationProperties(prefix = "spring.datasource.book")
     @Primary
     public DataSource testDataSource() {
+
         return DataSourceBuilder.create().build();
+
     }
 
     @Bean(name = "bookSqlSessionFactory")
@@ -34,6 +37,11 @@ public class BookDataSourceConfigurer
     	SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
     	//设置数据源
         bean.setDataSource(dataSource);
+
+        // 设置配置路径
+        bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
+
+
         //获取具体的session
         return bean.getObject();
     }

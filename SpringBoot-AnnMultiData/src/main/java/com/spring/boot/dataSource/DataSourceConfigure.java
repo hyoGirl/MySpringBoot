@@ -1,13 +1,13 @@
 package com.spring.boot.dataSource;
 
-import javax.sql.DataSource;
-
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+
+import javax.sql.DataSource;
 
 @Configuration
 public class DataSourceConfigure {
@@ -16,7 +16,8 @@ public class DataSourceConfigure {
     @Bean(name = "userDataSource")//装配该方法返回值为userDataSource管理bean
     @Qualifier("userDataSource")//spring装配bean唯一标识
     @ConfigurationProperties(prefix="spring.datasource.user")//application.yml文件内配置数据源的前缀
-    public DataSource userDataSource(){return DataSourceBuilder.create().build();}
+    public DataSource userDataSource(){
+        return DataSourceBuilder.create().build();}
 
     //书籍数据源
     @Bean(name = "bookDataSource")

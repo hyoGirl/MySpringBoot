@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.spring.boot.mapper.user.UserMapper">
+
+
+	<resultMap id="base" type="com.spring.boot.pojo.User">
+		<result property="id" column="t_id"></result>
+		<result property="name" column="t_name"></result>
+		<result property="age" column="t_age"></result>
+		<result property="address" column="t_address"></result>
+		<result property="pwd" column="t_pwd"></result>
+		<result property="sex" column="sex" typeHandler="com.spring.boot.handler.SexHandler"></result>
+	</resultMap>
+
+    <sql id="allColumns">
+		`t_name` ,`t_age` ,`t_address` ,`t_pwd` ,`sex`
+    </sql>
+
+
+    <insert id="addUser" parameterType="com.spring.boot.pojo.User" useGeneratedKeys="true" keyProperty="id" keyColumn="t_id">
+		insert into t_user
+		(
+		<include refid="allColumns"/>
+		)
+		values(
+		#{name},#{age},#{address},#{pwd},#{sex,typeHandler=com.spring.boot.handler.SexHandler}
+		)
+	</insert>
+
+	<select id="findUserById" resultMap="base">
+		SELECT
+		*
+		FROM t_user where t_id=#{id}
+	</select>
+
+</mapper>

@@ -13,15 +13,39 @@ import com.spring.boot.pojo.User;
 @RestController
 @RequestMapping("/user")
 public class UserController {
-	
-	@Autowired
-	private UserMapper userMapper;
-	
-	@GetMapping("/list")
-	public List<User> findAll(){
-		
-		
-		
-		return userMapper.selectAll();
-	}
+
+    @Autowired
+    private UserMapper userMapper;
+
+    @GetMapping("/list")
+    public List<User> findAll() {
+        return userMapper.selectAll();
+    }
+    @GetMapping("/id")
+    public User findID() {
+        return userMapper.findUserById(11L);
+    }
+
+    @GetMapping("/add")
+    public User addUser() {
+
+        User user = new User();
+        user.setAddress("測試地址");
+        user.setAge(18);
+        user.setName("测试人员");
+        user.setPwd("123456");
+        user.setSex("男");
+//        userMapper.insert(user);
+
+
+
+
+
+        userMapper.addUser(user);
+
+        User user1 = userMapper.findUserById(user.getId());
+
+        return user1;
+
+    }
 }

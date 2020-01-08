@@ -24,8 +24,8 @@ import java.lang.reflect.Method;
 import java.util.Map;
 import java.util.UUID;
 
-@Aspect
-@Component
+//@Aspect
+//@Component
 public class RequestAspect {
 
     Logger logger = LoggerFactory.getLogger(RequestAspect.class);

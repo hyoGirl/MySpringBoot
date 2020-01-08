@@ -1,13 +1,11 @@
 package com.mybatis.plus.config;
 
+import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.baomidou.mybatisplus.plugins.PaginationInterceptor;
-import org.springframework.transaction.annotation.EnableTransactionManagement;
-
 @Configuration
-@EnableTransactionManagement
 public class MybatisPlusConfig {
 	
 	@Bean
@@ -16,6 +14,8 @@ public class MybatisPlusConfig {
         page.setDialectType("mysql");
         return page;
     }
+
+
 
 
 }

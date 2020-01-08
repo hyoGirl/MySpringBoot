@@ -9,11 +9,13 @@
 		<result property="age" column="t_age"></result>
 		<result property="address" column="t_address"></result>
 		<result property="pwd" column="t_pwd"></result>
+		<result property="sex" column="sex"></result>
 		<result property="sex" column="sex" typeHandler="com.spring.boot.handler.SexHandler"></result>
+		<result property="hobby" column="hobby" ></result>
 	</resultMap>
 
     <sql id="allColumns">
-		`t_name` ,`t_age` ,`t_address` ,`t_pwd` ,`sex`
+		`t_name` ,`t_age` ,`t_address` ,`t_pwd` ,`sex`,hobby
     </sql>
 
 
@@ -23,7 +25,9 @@
 		<include refid="allColumns"/>
 		)
 		values(
-		#{name},#{age},#{address},#{pwd},#{sex,typeHandler=com.spring.boot.handler.SexHandler}
+		#{name},#{age},#{address},#{pwd}
+        ,#{sex,typeHandler=com.spring.boot.handler.SexHandler}
+        ,#{hobby}
 		)
 	</insert>
 

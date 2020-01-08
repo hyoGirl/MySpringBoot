@@ -8,17 +8,33 @@
   <artifactId>SpringBoot-mybatisPlus</artifactId>
   
   <dependencies>
-  	<dependency>
-       <groupId>com.baomidou</groupId>
-       <artifactId>mybatis-plus</artifactId>
-       <version>2.0.7</version> 
-	</dependency>
-	<dependency>
-		   <groupId>com.baomidou</groupId>
-           <artifactId>mybatisplus-spring-boot-starter</artifactId>
-           <!--<version>1.0.1</version>-->
-           <version>1.0.5</version>
-     </dependency>
+  	<!--<dependency>-->
+       <!--<groupId>com.baomidou</groupId>-->
+       <!--<artifactId>mybatis-plus</artifactId>-->
+       <!--<version>2.0.7</version> -->
+	<!--</dependency>-->
+      <dependency>
+          <groupId>com.baomidou</groupId>
+          <artifactId>mybatis-plus-boot-starter</artifactId>
+          <version>3.1.0</version>
+      </dependency>
+
+
+      <dependency>
+          <groupId>cn.afterturn</groupId>
+          <artifactId>easypoi-base</artifactId>
+          <version>4.0.0</version>
+      </dependency>
+      <dependency>
+          <groupId>cn.afterturn</groupId>
+          <artifactId>easypoi-web</artifactId>
+          <version>4.0.0</version>
+      </dependency>
+      <dependency>
+          <groupId>cn.afterturn</groupId>
+          <artifactId>easypoi-annotation</artifactId>
+          <version>4.0.0</version>
+      </dependency>
   </dependencies>
   
 </project>

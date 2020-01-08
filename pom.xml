@@ -15,7 +15,7 @@
 
 	<properties>
 		<mybatis-spring-boot>1.2.0</mybatis-spring-boot>
-		<mysql-connector>5.1.39</mysql-connector>
+		<mysql-connector>8.0.11</mysql-connector>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
@@ -31,10 +31,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-thymeleaf</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.springframework.boot</groupId>-->
+            <!--<artifactId>spring-boot-starter-thymeleaf</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>net.sourceforge.nekohtml</groupId>
             <artifactId>nekohtml</artifactId>
@@ -140,5 +140,6 @@
          <module>RabbitMQ-Delay</module>
          <module>RabbitMQ-TTL</module>
          <module>RabbitMQ-TTL02</module>
+         <module>TK</module>
      </modules>
 </project>

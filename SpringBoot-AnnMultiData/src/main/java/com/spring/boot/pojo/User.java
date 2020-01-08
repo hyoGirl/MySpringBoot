@@ -3,6 +3,7 @@ package com.spring.boot.pojo;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Table;
@@ -28,5 +29,11 @@ public class User implements Serializable{
     private String pwd;
 
 	private String sex;
+
+
+	// 测试typehandler
+	@Column(name = "hobby")
+	private String hobby;
+//	private List<String> hobby;
 
 }

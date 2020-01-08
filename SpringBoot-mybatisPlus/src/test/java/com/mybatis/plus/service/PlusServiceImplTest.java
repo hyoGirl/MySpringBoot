@@ -1,19 +1,13 @@
 package com.mybatis.plus.service;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.mybatis.plus.entity.Plus;
+import com.mybatis.plus.utils.PageInfoTable;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import com.baomidou.mybatisplus.plugins.Page;
-import com.baomidou.mybatisplus.plugins.pagination.Pagination;
-import com.mybatis.plus.entity.Plus;
-import com.mybatis.plus.utils.PageInfoTable;
 import org.springframework.transaction.annotation.Transactional;
 
 @RunWith(SpringRunner.class)

@@ -1,6 +1,7 @@
 
 package com.spring.boot.dataSource;
 
+import com.spring.boot.handler.ListTypeHandler;
 import com.spring.boot.handler.SexHandler;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.type.TypeHandler;
@@ -33,7 +34,11 @@ public class UserDataSourceConfigurer
     public SqlSessionFactory testSqlSessionFactory(@Qualifier("userDataSource") DataSource dataSource) throws Exception {
         SqlSessionFactoryBean bean = new SqlSessionFactoryBean();
         bean.setDataSource(dataSource);
-        bean.setTypeHandlers(new TypeHandler[]{new SexHandler()});
+
+//        TypeHandler[] types={new SexHandler(),new ListTypeHandler()};
+        TypeHandler[] types=new TypeHandler[1];
+        types[0]=new SexHandler();
+        bean.setTypeHandlers(types);
         bean.setMapperLocations(new PathMatchingResourcePatternResolver().getResources("classpath:mapper/*.xml"));
         return bean.getObject();
     }

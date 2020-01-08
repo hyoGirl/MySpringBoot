@@ -1,19 +1,16 @@
 package com.mybatis.plus.service;
 
-import java.util.List;
-import java.util.Map;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import org.springframework.aop.framework.AopContext;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Propagation;
-import org.springframework.transaction.annotation.Transactional;
-
-import com.baomidou.mybatisplus.plugins.Page;
-import com.baomidou.mybatisplus.service.impl.ServiceImpl;
+import com.baomidou.mybatisplus.core.metadata.IPage;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.mybatis.plus.dao.PlusMapper;
 import com.mybatis.plus.entity.Plus;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 public class PlusServiceImpl extends ServiceImpl<PlusMapper,Plus> implements PlusService{
@@ -56,11 +53,14 @@ public class PlusServiceImpl extends ServiceImpl<PlusMapper,Plus> implements Plu
 		//不需要条件来进行分页
 		//List<Plus> list = plusMapper.selectList(null);
 		//不采用条件进行分页
-		List<Plus> lstUser = plusMapper.selectPage(page, null);
-		
-		page.setRecords(lstUser);
-		
-		return page;
+//		List<Plus> lstUser = plusMapper.selectPage(page, null);
+
+//		IPage<Plus> plusIPage = plusMapper.selectPage(page, null);
+//
+//		page.setRecords(lstUser);
+//
+//		return page;
+		return null;
 	}
 
 

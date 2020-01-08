@@ -1,5 +1,6 @@
 package com.spring.boot.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,7 +36,14 @@ public class UserController {
         user.setName("测试人员");
         user.setPwd("123456");
         user.setSex("男");
-//        userMapper.insert(user);
+
+        List<String> data=new ArrayList<>();
+
+        data.add("A");
+        data.add("B");
+        data.add("C");
+//        user.setHobby(data);
+
 
 
 

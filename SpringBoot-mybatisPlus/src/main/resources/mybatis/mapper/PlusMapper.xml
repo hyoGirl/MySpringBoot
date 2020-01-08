@@ -41,7 +41,7 @@
 	
 	</select>
 	<!-- 	设置分页02 -->
-	<select id="findPlusPage" resultType="map" parameterType="com.baomidou.mybatisplus.plugins.Page">
+	<select id="findPlusPage" resultType="map">
 		select * from t_mybatisplus
 	</select>
 

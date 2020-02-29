@@ -1,0 +1,1 @@
+collect_dt,prov,city,brch_cd,prescription,count,collected_cnt,nomal_collect_cnt,abn_collect_cnt,no_collect_cnt,collect_rate,reach_cnt,no_reach_cnt,reach_rate,before_send_ring,ring_rate

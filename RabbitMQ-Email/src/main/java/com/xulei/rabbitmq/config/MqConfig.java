@@ -30,19 +30,19 @@ public class MqConfig {
 //     public static final String MAIL_ROUTING_KEY_NAME = "mail.routing.key";
 //
 //     //消息队列
-//     @Bean
+//     @MyBean
 //     public Queue mailQueue() {
 //          return new Queue(MAIL_QUEUE_NAME,true);
 //     }
 //
 //     //邮件交换器
-//     @Bean
+//     @MyBean
 //     public DirectExchange mailExchange() {
 //          return new DirectExchange(MAIL_EXCHANGE_NAME, true, false);
 //     }
 //
 //     // 交换器与路由绑定
-//     @Bean
+//     @MyBean
 //     public Binding mailBinding() {
 //          return BindingBuilder.bind(mailQueue()).to(mailExchange()).with(MAIL_ROUTING_KEY_NAME);
 //     }

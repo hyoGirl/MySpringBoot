@@ -43,4 +43,52 @@ public class ExcelUtil {
             }
         }
     }
+
+    public static void dowloadWorkbook(Workbook workbook, String fileName,HttpServletResponse response) {
+        try {
+            response.setCharacterEncoding("UTF-8");
+            response.setContentType("application/vnd.ms-excel");
+            response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, "UTF-8")+".xls");
+            OutputStream outputStream = response.getOutputStream();
+            BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream);
+            workbook.write(bufferedOutputStream);
+            bufferedOutputStream.flush();
+            bufferedOutputStream.close();
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (workbook != null) {
+                    workbook.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public static void dowloadBigbook(Workbook workbook, String fileName,HttpServletResponse response) {
+        try {
+            response.setCharacterEncoding("UTF-8");
+            response.setContentType("application/vnd.ms-excel");
+            response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, "UTF-8")+".xlsx");
+            OutputStream outputStream = response.getOutputStream();
+            BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(outputStream);
+            workbook.write(bufferedOutputStream);
+            bufferedOutputStream.flush();
+            bufferedOutputStream.close();
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (workbook != null) {
+                    workbook.close();
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 }

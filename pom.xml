@@ -140,6 +140,6 @@
          <module>RabbitMQ-Delay</module>
          <module>RabbitMQ-TTL</module>
          <module>RabbitMQ-TTL02</module>
-         <module>TK</module>
+         <module>ExcludeAuto</module>
      </modules>
 </project>

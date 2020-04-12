@@ -53,7 +53,7 @@ public class DataSourceConfig {
         return dynamicDataSource;
     }
 
-//    @Bean
+//    @MyBean
 //    public SqlSessionFactory sqlSessionFactory(
 //            @Qualifier("dynamicDataSource") DataSource dynamicDataSource)
 //            throws Exception {
@@ -65,7 +65,7 @@ public class DataSourceConfig {
 //
 //    }
 //
-//    @Bean(name = "sqlSessionTemplate")
+//    @MyBean(name = "sqlSessionTemplate")
 //    public SqlSessionTemplate sqlSessionTemplate(
 //            @Qualifier("sqlSessionFactory") SqlSessionFactory sqlSessionFactory)
 //            throws Exception {

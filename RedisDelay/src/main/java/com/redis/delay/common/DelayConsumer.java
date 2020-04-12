@@ -1,11 +1,7 @@
 package com.redis.delay.common;
 
-import com.alibaba.fastjson.JSONObject;
-import com.redis.delay.vo.Msg;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ZSetOperations;
-import org.springframework.data.redis.core.script.DefaultRedisScript;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Component;
 import redis.clients.jedis.Jedis;
@@ -13,7 +9,6 @@ import redis.clients.jedis.Jedis;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author ashura1110
@@ -29,7 +24,7 @@ public class DelayConsumer {
     RedisTemplate redisTemplate;
 
 
-//    @Bean
+//    @MyBean
 //    public RedisScript<List> delayQueueScript() {
 //        DefaultRedisScript<List> redisScript = new DefaultRedisScript<>();
 //        //防止其他rest层无法引用资源

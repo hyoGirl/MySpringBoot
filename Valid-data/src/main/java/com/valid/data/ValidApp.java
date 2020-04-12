@@ -22,7 +22,7 @@ public class ValidApp {
 		SpringApplication.run(ValidApp.class, args);
 	}
 	
-//	@Bean
+//	@MyBean
 //    public HttpMessageConverters fastJsonHttpMessageConverters(){
 //        //1、先定义一个convert转换消息的对象
 //        FastJsonHttpMessageConverter fastConverter=new FastJsonHttpMessageConverter();

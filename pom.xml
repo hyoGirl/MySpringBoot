@@ -98,7 +98,6 @@
      	<module>SpringBoot-AnnMultiData</module>
 
      	<module>SpringBoot-thymeleaf</module>
-     	<module>SpringBoot-ShrioJPA</module>
 
      	<module>SpringBoot-mybatisPlus</module>
      	<module>SpringBoot-Redis_cache</module>
@@ -108,8 +107,6 @@
      	<module>SpringBoot-Redis-shiro</module>
      	<module>DataSource-04</module>
 
-     	<module>SpringBoot-RabbitMQ</module>
-     	<module>SpringBoot-RabbitMq</module>
      	<module>RabbitMQ-Fanout</module>
      	<module>RabbitMQ-Topic</module>
      	<module>RabbitMQ-Topic0</module>
@@ -140,6 +137,5 @@
          <module>RabbitMQ-Delay</module>
          <module>RabbitMQ-TTL</module>
          <module>RabbitMQ-TTL02</module>
-         <module>ExcludeAuto</module>
      </modules>
 </project>

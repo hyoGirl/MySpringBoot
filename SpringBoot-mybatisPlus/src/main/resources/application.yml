@@ -1,0 +1,28 @@
+logging:
+    level:
+        com:
+            mybatis:
+                plus: DEBUG
+        org:
+            springframework:
+                transaction: trace
+mybatis-plus:
+    global-config:
+        db-column-underline: true
+        refresh-mapper: true
+    mapper-locations: classpath:/mybatis/mapper/*Mapper.xml
+    typeAliasesPackage: com.mybatis.plus.entity
+server:
+    port: 8081
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: root
+        url: jdbc:mysql://localhost:3306/mybatis?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root
+    mvc:
+        view:
+            prefix: /pages/
+            suffix: .html
+    resources:
+        static-locations: classpath:/static/**

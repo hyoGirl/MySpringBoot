@@ -43,6 +43,6 @@
    是参考网上代码自己写的乐观锁例子  https://www.jianshu.com/p/315b7de976b8
 
 
-## 7：SpringBoot-mybatisPlus
+## 8：SpringBoot-mybatisPlus
    - 1：这个是基本的CRUD 
 -    2：增加了怎么手动注册BEAN到Spring环境中

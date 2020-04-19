@@ -1,0 +1,16 @@
+logging:
+    level:
+        com:
+            jd: debug
+server:
+    port: 8523
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        password: root
+        url: jdbc:mysql://127.0.0.1/chunjieboot?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC&useSSL=true
+        username: root
+    thymeleaf:
+        cache: false
+        prefix: classpath:/templates/
+        suffix: .html

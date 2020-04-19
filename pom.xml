@@ -137,5 +137,6 @@
          <module>RabbitMQ-Delay</module>
          <module>RabbitMQ-TTL</module>
          <module>RabbitMQ-TTL02</module>
+         <module>Spider-JD</module>
      </modules>
 </project>

@@ -3,6 +3,8 @@ package com.xulei.spring.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.xulei.spring.model.JdModel;
 
+import java.util.List;
+
 /**
  * @version 1.0
  * @class: JdService
@@ -11,4 +13,5 @@ import com.xulei.spring.model.JdModel;
  * @description:
  */
 public interface JdService extends IService<JdModel> {
+    void insertData(List<JdModel> bookdatas);
 }

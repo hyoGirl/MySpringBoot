@@ -9,21 +9,18 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @author xulei
+ * @Classname MovieListModel
+ * @Description 电影列表
+ * @Date 2020/4/20 13:50
+ * @Created by xulei
  */
 @Data
-@TableName("jd_model")
-public class JdModel extends Model<JdModel> implements Serializable {
-
-
-    private static final long serialVersionUID = -9081259429719031051L;
+@TableName("sp_movie")
+public class MovieListModel extends Model<MovieListModel> implements Serializable {
 
     @TableId(type = IdType.AUTO)
-    private  Integer id;
+    private int id;
 
-    private String bookId;
-    private String bookName;
-    private String bookPrice;
-
-
+    private String href;
+    private String text;
 }

@@ -1,4 +1,4 @@
-package com.xulei.spring.util;
+package com.xulei.spring.processor;
 
 
 import com.xulei.spring.model.JdModel;
@@ -10,10 +10,11 @@ import org.jsoup.select.Elements;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JdParse {
+public class JdParse implements  HtmlParse{
 
 
-    public static List<JdModel> getData(String html){
+    @Override
+    public  List<JdModel> getData(String html){
 
         List<JdModel> data = new ArrayList<JdModel>();
         Document doc = Jsoup.parse(html);

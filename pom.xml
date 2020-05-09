@@ -107,12 +107,6 @@
      	<module>SpringBoot-Redis-shiro</module>
      	<module>DataSource-04</module>
 
-     	<module>RabbitMQ-Fanout</module>
-     	<module>RabbitMQ-Topic</module>
-     	<module>RabbitMQ-Topic0</module>
-     	<module>RabbitMQ-Direct</module>
-     	<module>RabbitMQ-topicNolisten</module>
-
      	<module>Properties-MapList</module>
      	<module>login-Token</module>
      	<module>Mybatis-batch</module>
@@ -129,14 +123,9 @@
          <module>Observer</module>
          <module>RedisLock</module>
          <module>RedisSingle</module>
-         <module>RabbitMQ-Email</module>
          <module>Nginx-10086</module>
          <module>Nginx-10085</module>
          <module>Redis-Limit</module>
-         <module>RabbitMQ-Email-Proxy</module>
-         <module>RabbitMQ-Delay</module>
-         <module>RabbitMQ-TTL</module>
-         <module>RabbitMQ-TTL02</module>
          <module>Spider-JD</module>
      </modules>
 </project>

@@ -55,11 +55,11 @@
             <scope>runtime</scope>
         </dependency>
         <!-- 阿里巴巴fastjson，解析json视图 -->
-		<dependency>
+<!-- 		<dependency>
 			<groupId>com.alibaba</groupId>
 			<artifactId>fastjson</artifactId>
 			<version>1.2.59</version>
-		</dependency>
+		</dependency> -->
 		<dependency>
 			<groupId>javax.persistence</groupId>
 		  	<artifactId>persistence-api</artifactId>

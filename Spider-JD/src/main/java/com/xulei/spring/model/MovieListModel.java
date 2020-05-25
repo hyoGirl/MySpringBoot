@@ -23,4 +23,8 @@ public class MovieListModel extends Model<MovieListModel> implements Serializabl
 
     private String href;
     private String text;
+
+    private String year;
+
+    private String down;
 }

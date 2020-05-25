@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.xulei.spring.dao.MovieListMapper;
 import com.xulei.spring.executor.SpiderExecutors;
 import com.xulei.spring.model.MovieListModel;
+import com.xulei.spring.processor.MovieDetailParse;
 import com.xulei.spring.processor.MovieParse;
 import com.xulei.spring.service.MovieListService;
 import com.xulei.spring.util.URLFecter;
@@ -39,21 +40,16 @@ public class MovieListServiceImpl extends ServiceImpl<MovieListMapper,MovieListM
         int size = data.size();
         for (int i = 0; i < size; i++) {
             MovieListModel movieListModel = data.get(i);
-            spiderExecutors.execute(new Runnable() {
-                @Override
-                public void run() {
-                    String href = movieListModel.getHref();
-                    href=prefix+href;
-                    try {
-                        String html = new URLFecter().parseURL(httpClient, href);
-                        List<MovieListModel> data = new MovieParse().getData(html);
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+            String href = movieListModel.getHref();
+            href=prefix+href;
+            try {
+                String html = new URLFecter().parseURL(httpClient, href);
+                List<?> data1 = new MovieDetailParse().getData(html);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
 
-                }
-            });
         }
     }
 }

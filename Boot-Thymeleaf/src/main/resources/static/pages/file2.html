@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="../js/jquery.min.js"></script>
+</head>
+<body>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <br>
+        <input type="submit" value="上传" class="btn btn-success">
+    </form>
+  <br>
+  <img  id="test"/>
+    <div id="test2"></div>
+  <script type="text/javascript">
+          $(function(){
+              var img=document.getElementById("test");
+              img.setAttribute("src","/stream");
+              var div2=document.getElementById("test2");
+              $.ajax({
+                  //请求方式
+                  type : "GET",
+                  //请求的媒体类型
+                  contentType: "text/html;charset=UTF-8",
+                  //请求地址
+                  url : "/excel",
+                  //数据，json字符串
+                  data : '',
+                  //请求成功
+                  success : function(result) {
+                      div2.innerHTML = result;
+                  },
+                  //请求失败，包含具体的错误信息
+                  error : function(e){
+                      console.log(e.status);
+                      console.log(e.responseText);
+                  }
+              });
+          });
+
+
+
+  </script>
+</body>
+</html>

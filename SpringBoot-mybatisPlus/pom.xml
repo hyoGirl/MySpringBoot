@@ -20,22 +20,6 @@
       </dependency>
 
 
-      <!--<dependency>-->
-          <!--<groupId>cn.afterturn</groupId>-->
-          <!--<artifactId>easypoi-base</artifactId>-->
-          <!--<version>4.1.0</version>-->
-      <!--</dependency>-->
-      <!--<dependency>-->
-          <!--<groupId>cn.afterturn</groupId>-->
-          <!--<artifactId>easypoi-web</artifactId>-->
-          <!--<version>4.1.0</version>-->
-      <!--</dependency>-->
-      <!--<dependency>-->
-          <!--<groupId>cn.afterturn</groupId>-->
-          <!--<artifactId>easypoi-annotation</artifactId>-->
-          <!--<version>4.1.0</version>-->
-      <!--</dependency>-->
-
       <dependency>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-starter-web</artifactId>
@@ -59,6 +43,20 @@
           <artifactId>commons-pool2</artifactId>
           <!--<version>2.6.2</version>-->
       </dependency>
+      <dependency>
+          <groupId>com.alibaba</groupId>
+          <artifactId>fastjson</artifactId>
+          <version>1.2.40</version>
+      </dependency>
+
+      <!-- 模板引擎 Thymeleaf 依赖 -->
+      <dependency>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-thymeleaf</artifactId>
+      </dependency>
+
+
+
   </dependencies>
   
 </project>

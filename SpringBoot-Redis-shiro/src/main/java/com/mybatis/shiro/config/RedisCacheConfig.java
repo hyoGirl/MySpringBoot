@@ -16,8 +16,8 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.PropertyAccessor;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Configuration
-@EnableCaching
+//@Configuration
+//@EnableCaching
 public class RedisCacheConfig extends CachingConfigurerSupport {
 	@Value("${spring.redis.host}")
 	private String host;
@@ -83,18 +83,18 @@ public class RedisCacheConfig extends CachingConfigurerSupport {
      * @param redisTemplate
      * @return
      */
-    @Bean
-    public CacheManager cacheManager(RedisTemplate redisTemplate) {
-//        return new RedisCacheManager(redisTemplate);
-        RedisCacheManager rcm = new RedisCacheManager(redisTemplate);
-        // 多个缓存的名称,目前只定义了一个
-       // rcm.setCacheNames(Arrays.asList("test"));
-        //设置缓存过期时间(秒)
-        rcm.setDefaultExpiration(1800);
-        
-        return rcm;
-        
-    }
+//    @Bean
+//    public CacheManager cacheManager(RedisTemplate redisTemplate) {
+////        return new RedisCacheManager(redisTemplate);
+//        RedisCacheManager rcm = new RedisCacheManager(redisTemplate);
+//        // 多个缓存的名称,目前只定义了一个
+//       // rcm.setCacheNames(Arrays.asList("test"));
+//        //设置缓存过期时间(秒)
+////        rcm.setDefaultExpiration(1800);
+//
+//        return rcm;
+//
+//    }
     
     /**
      * 自定义生成key的规则

@@ -1,0 +1,16 @@
+server:
+    port: 8005
+spring:
+    thymeleaf:
+       prefix: classpath:/static/
+       suffix: .html
+       servlet:
+         content-type: text/html
+       enabled: true
+       encoding: UTF-8
+       mode: HTML
+       cache: false
+file:
+  upload:
+    path: F://images/
+    relative: /images/**

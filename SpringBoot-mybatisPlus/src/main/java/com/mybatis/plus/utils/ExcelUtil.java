@@ -3,13 +3,17 @@ package com.mybatis.plus.utils;
 import cn.afterturn.easypoi.excel.ExcelExportUtil;
 import cn.afterturn.easypoi.excel.entity.ExportParams;
 import com.mybatis.plus.dto.PlusDto;
+import org.apache.poi.ss.formula.functions.T;
 import org.apache.poi.ss.usermodel.Workbook;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedOutputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URLEncoder;
+import java.time.LocalDate;
+import java.util.List;
 
 /**
  * @author ashura1110
@@ -91,4 +95,16 @@ public class ExcelUtil {
             }
         }
     }
+
+    public static void creatExcel(String filePth, ExportParams exportParams, Class obj, List<T> allList)throws Exception{
+
+        String finalPath = filePth + "result_" + LocalDate.now() + ".xls";
+        FileOutputStream fos = new FileOutputStream(finalPath);
+        Workbook workbook = ExcelExportUtil.exportExcel(exportParams, obj, allList);
+        workbook.write(fos);
+
+
+    }
+
+
 }

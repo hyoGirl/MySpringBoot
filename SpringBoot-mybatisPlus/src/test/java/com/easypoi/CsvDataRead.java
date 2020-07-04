@@ -127,7 +127,7 @@ public class CsvDataRead {
             params.setHeadRows(0);
             List<Object> objects = CsvImportUtil.importCsv(new FileInputStream(file),
                     ReadDto.class, params);
-            System.out.println(JSON.toJSONString(objects));
+//            System.out.println(JSON.toJSONString(objects));
             System.out.println(objects.size());
             LOGGER.debug("end,time is {}", ((new Date().getTime() - start.getTime()) / 1000));
         } catch (Exception e) {
